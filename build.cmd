@@ -30,7 +30,7 @@ robocopy /S "%BUILD_DIR%\FizzBuzz\bin" "%BUILD_DIR%\dist"
 
 
 REM Run Unit Tests ------------------------------------------------------------
-test
+.\test
 
 
 REM Cleanup ------------------------------------------------------------
