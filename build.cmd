@@ -1,9 +1,6 @@
 @echo off
 setlocal
 
-REM powershell -NoProfile -ExecutionPolicy Bypass -Command ".\build.ps1"
-
-
 REM Get Current Path and Ensure that we are running from the expected location ----------------------------
 set BUILD_DIR=%CD%
 
