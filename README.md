@@ -1,5 +1,14 @@
 # FizzBuzz
-Sample implementation of FizzBuzz
+Sample implementation of FizzBuzz. The default rules are as follows:
+- Even numbers return the word "even"
+- Odd numbers return the word "odd"
+- Numbers that are multiples of 3 display the word "fizz"
+
+###Tips & Tricks
+- If a number matches multiple rules, all matching words are returned for that number.
+- The default rules can be turned off (pass `false` as the `applyDefaultRules` parameter)
+- A collection of additional custom rules can be applied (pass a `Dictionary<NumberRule, string>` as the `ruleList` parameter)
+
 
 ##Installation (Windows)
 After cloning the repo locally, you can:
