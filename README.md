@@ -41,24 +41,24 @@ rules, adding 2 additional custom rules.
 ##Sample Code (Large Upper Bound)
 The `ProcessRange` method provides a callback override that should be used when a large upper bound is expected. Instead of storing the results in a collection, this override accepts a callback delegate and calls it as each number is processed.
 
-  //Example callback function
-  private static void WriteOutput(int number, string output)
-  {
-      Console.WriteLine("{0}: {1}", number, output);
-  }
+    //Example callback function
+    private static void WriteOutput(int number, string output)
+    {
+        Console.WriteLine("{0}: {1}", number, output);
+    }
 
-  var fizzBuzz = new RulesEngine();
-  var upperBound = 1234567;
+    var fizzBuzz = new RulesEngine();
+    var upperBound = 1234567;
 
-  //Define custom rules to pass to rules engine
-  var rules = new Dictionary<NumberRule, string>()
-  {
-      {x => x == 4, "FOUR"},
-      {x => x > 50 && x%6 == 0, "GREATER_THAN_FIFTY_AND_MULTIPLE_OF_6"}
-  };
+    //Define custom rules to pass to rules engine
+    var rules = new Dictionary<NumberRule, string>()
+    {
+        {x => x == 4, "FOUR"},
+        {x => x > 50 && x%6 == 0, "GREATER_THAN_FIFTY_AND_MULTIPLE_OF_6"}
+    };
 
-  MemoryStream stream = new MemoryStream();
-  StreamWriter writer = new StreamWriter(stream);
-  StreamReader reader = new StreamReader(stream);
+    MemoryStream stream = new MemoryStream();
+    StreamWriter writer = new StreamWriter(stream);
+    StreamReader reader = new StreamReader(stream);
 
-  fizzBuzz.ProcessRange(upperBound, WriteOutput, rules);
+    fizzBuzz.ProcessRange(upperBound, WriteOutput, rules);
