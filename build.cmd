@@ -22,6 +22,7 @@ REM Build the DLL ------------------------------------------------------------
 echo DEBUG Build...
 
 "%msbuild.exe%" "%BUILD_DIR%\FizzBuzz\FizzBuzz.csproj" /property:Configuration=Debug
+"%msbuild.exe%" "%BUILD_DIR%\FizzBuzzConsole\FizzBuzzConsole.csproj" /property:Configuration=Debug
 
 echo RELEASE Build...
 

@@ -58,7 +58,7 @@ namespace FizzBuzz
             var output = new Dictionary<int, string>();
 
             //Loop through numbers, appending the proper output for each
-            for (var number = 1; number <= upperBound; number++)
+            for (var number = 0; number <= upperBound; number++)
             {
                 var result = ProcessNumber(number, ruleList);
                 output.Add(number, result);
