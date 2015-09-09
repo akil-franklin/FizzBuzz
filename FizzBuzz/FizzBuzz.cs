@@ -19,11 +19,13 @@ namespace FizzBuzz
     /// </summary>
     public class RulesEngine
     {
-        public void ProcessRange(int upperBound, Callback callback)
+        public void ProcessRange(int upperBound, Callback callback,
+            Dictionary<NumberRule, string> ruleList = null,
+            bool applyDefaultRules = true)
         {
             for (var number = 0; number <= upperBound; number++)
             {
-                callback(number, number.ToString());
+                callback(number, ProcessNumber(number, ruleList, applyDefaultRules));
             }
         }
 
@@ -53,6 +55,11 @@ namespace FizzBuzz
             {
                 throw new ArgumentOutOfRangeException("upperBound", upperBound, 
                     "Only positive upper bounds are supported at this time.");
+            }
+            if (upperBound > 99999)
+            {
+                throw new ArgumentOutOfRangeException("upperBound", upperBound,
+                   "upperBound exceeds the supported range for this override. Please use the method override that accepts a callback function");               
             }
 
             var output = new Dictionary<int, string>();

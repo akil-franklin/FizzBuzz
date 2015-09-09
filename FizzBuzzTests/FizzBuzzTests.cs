@@ -30,6 +30,13 @@ namespace FizzBuzzTests
         }
 
         [Test]
+        public void ProcessNumbers_Should_Throw_Exception_For_Large_Numbers()
+        {
+            var fizzBuzz = new RulesEngine();
+            Assert.Throws<ArgumentOutOfRangeException>(() => fizzBuzz.ProcessRange(999999));
+        }
+
+        [Test]
         public void ProcessNumber_Should_Return_Even_For_0()
         {
             var fizzBuzz = new RulesEngine();
