@@ -42,10 +42,6 @@ namespace FizzBuzzConsole
             }
             else if (args.Length == 1 && Int32.TryParse(args[0], out upperBound))
             {
-                MemoryStream stream = new MemoryStream();
-                StreamWriter writer = new StreamWriter(stream);
-                StreamReader reader = new StreamReader(stream);
-
                 fizzBuzz.ProcessRange(upperBound, WriteOutput, rules);
             }
             else

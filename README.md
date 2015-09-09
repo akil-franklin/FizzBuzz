@@ -57,8 +57,4 @@ The `ProcessRange` method provides a callback override that should be used when 
         {x => x > 50 && x%6 == 0, "GREATER_THAN_FIFTY_AND_MULTIPLE_OF_6"}
     };
 
-    MemoryStream stream = new MemoryStream();
-    StreamWriter writer = new StreamWriter(stream);
-    StreamReader reader = new StreamReader(stream);
-
     fizzBuzz.ProcessRange(upperBound, WriteOutput, rules);
